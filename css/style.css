@@ -1,0 +1,782 @@
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+
+}
+
+    *, *:before, *:after {
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+:focus, :active {
+    outline: none;
+}
+
+a:focus, a:active {
+    outline: none;
+}
+
+nav, footer, header, aside {
+    display: block;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    font-size: 100%;
+    line-height: 1;
+    font-size: 14px;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+input, button, textarea {
+    font-family: inherit;
+}
+
+    input::-ms-clear {
+        display: none;
+    }
+
+button {
+    cursor: pointer;
+}
+
+    button::-moz-focus-inner {
+        padding: 0;
+        border: 0;
+    }
+
+a, a:visited {
+    text-decoration: none;
+}
+
+    a:hover {
+        text-decoration: none;
+    }
+
+ul li {
+    list-style: none;
+}
+
+img {
+    vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: inherit;
+    font-weight: 400;
+}
+/*_____________________________________________null----------------------------------_*/
+
+/*_____________________________________________backgrownd----------------------------------_*/
+.background1 {
+    width: 100%;
+    height: 850px;
+    background-image: url('../img/b.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -20;
+    background-attachment: fixed;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+   
+}
+    .background1::after {
+        content: '';
+        width: 100%;
+        height: 850px;
+        background: linear-gradient(to bottom, rgba(25,25,25,0.99) 0%,rgba(35,35,35,0.5) 50%,rgba(74,75,75,0.3) 100%);
+        backdrop-filter: blur( 2px );
+        -webkit-backdrop-filter: blur( 2px );
+        background-size: cover;
+        background-repeat: no-repeat;
+        z-index: -20;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+    }
+
+.glass {
+    background: rgb(15,15, 15,0.50);
+    backdrop-filter: blur( 15px );
+    -webkit-backdrop-filter: blur( 15px );
+    z-index:-18;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    transition-duration: 300ms;
+    opacity: 0;
+}
+/*_____________________________________________background  subclases----------------------------------_*/
+._conteiner {
+    margin: 00px auto;
+   
+    width: 1350px;
+    padding: 0px 10px;
+}
+._howbutt {
+    color: rgb(255, 255, 255);
+    transition-duration: 83ms;
+    text-shadow: 3px 3px 3px rgb(50, 50, 50);
+    font-size: 20px;
+    font-family: "Viga", sans-serif;
+}
+
+    ._howbutt:hover {
+        text-shadow: 3px 3px 3px rgb(255, 255, 255);
+        color: rgb(225, 225, 225);
+        font-size: 30px;
+    }
+
+._border {
+    border: 5px solid red;
+}
+._bltitle {
+    color: red;
+    font-size: 50px;
+    width: 100%;
+    text-align: center;
+    font-family: "Viga", sans-serif;
+    
+    margin-bottom: 30px;
+}
+/*_____________________________________________  subclases wraper/hidlist----------------------------------_*/
+.wraper {
+    min-height: 100%;
+    overflow: hidden;
+}
+
+
+.logo {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 70px;
+    height: 70px;
+    background-color: rgba(50,50,50,0.85);
+    backdrop-filter: blur( 9px );
+    -webkit-backdrop-filter: blur( 9px );
+    border-radius: 0px 0px 25px 0px;
+    border: 5px solid white;
+    transition-duration: 300ms;
+    overflow: hidden;
+    z-index: 30;
+}
+    .logo > .treeee,
+    .logo > .treeee::before,
+    .logo > .treeee::after {
+        display: block;
+        position: absolute;
+        width: 35px;
+        height: 5px;
+        background-color: white;
+        transition-duration: 500ms;
+        left: 10px;
+    }
+    .logo > .treeee {
+        transition-delay: 400ms;
+    }
+        .logo > .treeee::before {
+            content: '';
+            top: -15px;
+            width: 25px;
+            left: 10px;
+            transition-delay: 200ms;
+        }
+
+        .logo > .treeee::after {
+            content: '';
+            top: 15px;
+            width: 25px;
+            left: 0px;
+            transition-delay: 50ms;
+        }
+        
+
+        .list {
+            margin-left: 30%;
+        }
+.butonm {
+    top: 25px;
+    left: 25px;
+    width: 60px;
+    height: 50px;
+    position: fixed;
+    opacity: 0;
+    z-index: 99;
+    cursor: pointer;
+}
+.xxx,
+.xxx::after {
+    position: absolute;
+    top: 80px;
+    background-color: white;
+    width: 35px;
+    height: 5px;
+    left: 14px;
+    transform: rotate( 45deg);
+    transition-delay: 300ms;
+    transition-duration: 500ms;
+}
+    .xxx::after {
+        top: 0px;
+        content: '';
+        left: 0px;
+        transform: rotate( -90deg)
+    }
+
+
+.hidlist {
+    position: fixed;
+    width: 300px;
+   left:-300px;
+    background-color: rgba(50,50,50,0.85) ;
+    backdrop-filter: blur( 9px );
+    -webkit-backdrop-filter: blur( 9px );
+    transition-duration: 500ms;
+    transition-delay: 500ms;
+    border-radius: 0px 0px 25px 0px;
+    z-index: 19;
+    padding: 10px 25px 25px 130px;
+    
+}
+.hidlistCont {
+    width: 100%;
+    height: 35px;
+    overflow:hidden;
+    transition-duration:500ms;
+    
+    
+}
+    .hidlistCont:hover {
+        background-color: rgba(70,70,70,0.7);
+        height:140px;
+        border-radius: 5px;
+    }
+.hitem {
+    width: 100%;
+    height: 30px;
+    text-align: center;
+    
+    display:grid;
+   
+    background-color: rgba(99,99,99,0.7);
+    
+}
+
+    .hitem > p {
+        width: 100%;
+        font-size: 25px;
+        color: azure;
+        
+      margin-bottom: 20px
+        
+    }
+    
+    .hitem > a {
+       
+        width: 100%;
+       
+        font-size: 20px;
+        color: white;
+    }
+  .hitem > a:hover{
+     background-color:rgba(50,50,50,0.85)
+  }
+ 
+        /*--  --___animation button__*/
+        .butonm:checked ~ .logo > .treeee {
+            left: 70px;
+        }
+        .butonm:checked ~ .logo > .treeee::before {
+            left: 70px;
+        }
+        .butonm:checked ~ .logo > .treeee::after {
+            left: 70px;
+        }
+        .butonm:checked ~ .logo > .xxx{
+            top: 28px;
+        }
+
+.butonm:checked ~ .hidlist{
+    left: 0;
+}
+.butonm:checked ~ .glass {
+    opacity: 1;
+    z-index: 15;
+}
+    .butonm:checked ~ .logo{
+        border-radius: 50px;
+    }
+.butonm::after,
+.butonm::before {
+    content: '';
+    position: fixed;
+    top: -110px;
+    left: -110px;
+    width: 1px;
+    height: 1px;
+}
+    
+    .butonm:checked::after {
+        top: 0px;
+        left: 300px;
+        width: 100%;
+        height: 100%;
+    }
+.butonm:checked::before {
+    top:250px;
+    left:0px;
+    width: 100%;
+    height: 100%;
+}
+        /*--animation button--___  __*/
+        .textblock1 {
+            position: fixed;
+            top: -1080px;
+            left: 280px;
+            width: 200px;
+            height: 200px;
+            background-color: rgba(20,20,20,0.60);
+            border-radius: 15px;
+            color: white;
+            opacity: 0;
+            z-index: -21;
+            transition-delay: 200ms;
+        }
+
+.textblock2 {
+    position: fixed;
+    top: -1100px;
+    left: 280px;
+    width: 200px;
+    height: 180px;
+    background-color: rgba(20,20,20,0.60);
+    border-radius: 15px;
+    color: white;
+    opacity: 0;
+    z-index: -21;
+    transition-delay: 200ms;
+    font-family: "Permanent Marker", serif;
+    font-size:12px;
+}
+.textblock3 {
+    position: fixed;
+    top: -1000px;
+    left: 280px;
+    width: 230px;
+    height: 200px;
+    background-color: rgba(20,20,20,0.60);
+    border-radius: 15px;
+    color: white;
+    opacity: 0;
+    z-index: -21;
+    transition-delay: 200ms;
+    font-family: "Viga", sans-serif;
+}
+.btex1:hover ~ .textblock1 {
+    opacity: 1;
+    z-index: 21;
+    top: 80px;
+    
+}
+.btex2:hover ~ .textblock2 {
+    opacity: 1;
+    z-index: 21;
+    top: 100px;
+    
+}
+.btex3:hover ~ .textblock3 {
+    opacity: 1;
+    z-index: 21;
+    top: 120px;
+    
+}
+.up {
+    position: fixed;
+    border: 5px solid rgba(200,200,200,0.1);
+    border-radius: 99px;
+    width: 70px;
+    height: 70px;
+    bottom:20px;
+    left: 20px;
+    transition-duration: 300ms;
+    animation: scup linear;
+    animation-timeline: scroll();
+    z-index:-10;
+}
+@keyframes scup{
+    0%,20% {
+        opacity: 0;
+        z-index: -10;
+    }
+    20%,100% {
+        z-index: 10;
+    }
+    20%, 100%{
+        opacity: 1;
+    }
+}
+.up > a{
+    position:relative;
+    width:100%;
+    height:100%;
+    transition-duration: 300ms;
+}
+    .up:hover {
+        border: 5px solid rgba(200,200,200,0);
+        
+    }
+    .up > span {
+        position: absolute;
+        background-color: rgba(200,200,200,0.4);
+        border-radius: 3px;
+        box-shadow: rgba(200,200,200,0.4) 5px 5px 5px;
+        width: 5px;
+        height: 30px;
+        top: 17px;
+        left: 13px;
+        transform: rotate(45deg);
+        transition-duration: 300ms;
+    }
+    .up:hover > span {
+        background-color: rgba(200,200,200,0.9);
+        box-shadow: rgba(200,200,200,0.9) -10px -10px 1px;
+    } 
+    .up > span::after {
+        content: '';
+        position: absolute;
+        background-color: rgba(200,200,200,0.4);
+        border-radius: 3px;
+        box-shadow: rgba(200,200,200,0.4) -5px 5px 5px;
+        width: 5px;
+        height: 30px;
+        top: -20px;
+        left: 20px;
+        transform: rotate(-90deg);
+        transition-duration: 300ms;
+    }
+    .up:hover > span::after {
+        background-color: rgba(200,200,200,0.9);
+        box-shadow: rgba(200,200,200,0.9) 10px -10px 1px;
+    } 
+/*----------------------heder_____*/
+.header {
+    background-color: rgba(15,13,10, 0.8 );
+    
+}
+.headcont {
+    display:flex;
+    
+    align-items: center;
+    
+}
+.listt {
+    width: 100%;
+    
+}
+    .listt > ul {
+        
+        justify-content: space-evenly;
+        align-items:center;
+        display: flex;
+        height: 140px;
+    }
+    .listt > ul >li {
+        
+    }
+    /*---------heder--  __1-st block_________*/
+    .fr{
+        margin-top: 100px;
+        margin-bottom: 120px;
+       
+    }
+.frimface {
+    background-image: url('../img/aa.png');
+    margin:0 auto;
+
+   
+    width: 165px;
+    height: 223px;
+   
+}
+.frtextbl {
+
+    color: white;
+    
+    font-family: "Viga", sans-serif;
+}
+    .frtextbl > h2 {
+        font-size: 50px;
+       text-align:center;
+       margin: 40px 0px 10px 0px;
+    }
+    .frtextbl > p {
+        font-size: 30px;
+        text-align: center;
+    }
+/*__________1 end ______________________________________________ 2 start__________*/
+    .seck{
+        background-color:rgb(10,10,10);
+        padding: 50px 5px 50px 5px;
+        
+    }
+.sokont {
+    display: grid;
+    grid-template-columns: 1fr 400px 1fr 400px 1fr 400px 1fr;
+    grid-template-rows: 1fr 640px 1fr 640px 1fr ;
+    
+}
+.sgb1 {
+    border: 5px solid white;
+    width: 400px;
+    display: grid;
+    justify-items: center;
+    text-align: center;
+    grid-area: 2/2/2/2;
+    margin-bottom: 10px;
+}
+.sgb2 {
+    border: 5px solid white;
+    width: 400px;
+    display: grid;
+    justify-items: center;
+    text-align: center;
+    grid-area: 2/4/2/4;
+    margin-bottom:10px;
+}
+    .sgb2 > .jitem{
+        background-image:url('../img/cc.png')
+    }
+    .sgb3 {
+        border: 5px solid white;
+        width: 400px;
+        display: grid;
+        justify-items: center;
+        text-align: center;
+        grid-area: 2/6/2/6;
+        margin-bottom: 10px;
+    }
+.sgb4 {
+    border: 5px solid white;
+    width: 400px;
+    display: grid;
+    justify-items: center;
+    text-align: center;
+    grid-area: 4/2/4/2;
+    margin-bottom: 10px;
+}
+.jname {
+    font-size: 40px;
+    color: white;
+    font-family: "Viga", sans-serif;
+}
+.jitem {
+    background-image: url('../img/bb.png');
+    background-size: 100% 100%;
+    width: 360px;
+    height: 420px;
+    
+}
+.jitemp {
+    background-image: linear-gradient(135deg, rgb(175,175,175), rgb(5,5,5));
+    background-size: 100% 100%;
+    width: 360px;
+    height: 420px;
+    position: relative;
+    transition-duration: 500ms;
+}
+    .jitemp > span {
+        width: 260px;
+        height: 30px;
+        position: absolute;
+        top: 175px;
+        left: 30px;
+        background-color: rgba(100,100,100,0.9);
+        border-radius: 37px;
+        box-shadow: rgba(200,200,200,0.1) 55px 55px 1px;
+        transition-duration:500ms;
+    }
+        .jitemp > span::after {
+            content: '';
+            width: 30px;
+            height: 260px;
+            position: absolute;
+            box-shadow: rgba(200,200,200,0.1) 55px 55px 1px;
+            background-color: rgba(100,100,100,0.9);
+            border-radius: 37px;
+            top: -115px;
+            left: 115px;
+            transition-duration: 500ms;
+        }
+    .jnot {
+        font-size: 30px;
+        color: white;
+        font-family: "Viga", sans-serif;
+    }
+.jitemp:hover {
+    transform: skew(1deg,3deg);
+}
+    .jitemp:hover > span {
+        box-shadow: rgba(100,100,100,1) 0px 0px 1px;
+        background-color: rgba(200,200,200,1);
+        top: 195px;
+        left: 50px;
+    }
+.jitemp:hover > span::after {
+    box-shadow: rgba(100,100,100,1) 0px 0px 1px;
+    background-color: rgba(200,200,200,1);
+}
+/*__________2 end ______________________________________________ 3 start__________*/
+.tre {
+    
+    width: 100%;
+    height: 850px;
+    
+}
+
+.trcont {
+    padding: 100px 0px;
+   
+    justify-content: center;
+    display: flex;
+    background-image: url('../img/a.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -20;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+.tritem {
+    width: 6%;
+    height: 500px;
+    overflow: hidden;
+    padding: 5px;
+    transition-duration: 300ms;
+    background-color:rgba(15,15,15,0.8);
+    display:grid;
+    justify-items:center;
+}
+
+    .tritem > p {
+        font-size: 27px;
+        color: white;
+        font-family: "Viga", sans-serif;
+        
+    }
+
+.tfoto1 {
+    width: 400px;
+    height: 400px;
+    background-image: url('../img/a.jpg');
+    background-size: 100% 100%;
+    opacity:0;
+    transition-duration:300ms;
+}
+.tfoto2 {
+    width: 400px;
+    height: 400px;
+    background-image: url('../img/1.jpg');
+    background-size: 100% 100%;
+    opacity: 0;
+    transition-duration: 300ms;
+}
+.tfoto3 {
+    width: 400px;
+    height: 400px;
+    background-image: url('../img/2.jpg');
+    background-size: 100% 100%;
+    opacity: 0;
+    transition-duration: 300ms;
+}
+.tfoto4 {
+    width: 400px;
+    height: 400px;
+    background-image: url('../img/3.jpg');
+    background-size: 100% 100%;
+    opacity: 0;
+    transition-duration: 300ms;
+}
+.tfoto5 {
+    width: 400px;
+    height: 400px;
+    background-image: url('../img/aa.png');
+    background-size: 100% 100%;
+    opacity: 0;
+    transition-duration: 300ms;
+}
+.tfoto6 {
+    width: 400px;
+    height: 400px;
+    background-image: url('../img/bb.png');
+    background-size: 100% 100%;
+    opacity: 0;
+    transition-duration: 300ms;
+}
+.tfoto7 {
+    width: 400px;
+    height: 400px;
+    background-image: url('../img/cc.png');
+    background-size: 100% 100%;
+    opacity: 0;
+    transition-duration: 300ms;
+}
+.tritem:hover {
+    width: 500px;
+    background-color: rgba(0,0,0,0.9);
+
+}
+    .tritem:hover > .tfoto1,
+    .tritem:hover > .tfoto2,
+    .tritem:hover > .tfoto3,
+    .tritem:hover > .tfoto4,
+    .tritem:hover > .tfoto5,                                                                                    
+    .tritem:hover > .tfoto6,
+    .tritem:hover > .tfoto7 {
+        opacity: 1;
+    }
+
+#rr1:checked ~ .trcont {
+    background-image: url('../img/a.jpg');
+}
+#rr2:checked ~ .trcont {
+    background-image: url('../img/1.jpg');
+    
+}
+#rr3:checked ~ .trcont {
+    background-image: url('../img/2.jpg');
+}
+#rr4:checked ~ .trcont {
+    background-image: url('../img/3.jpg');
+}
+#rr5:checked ~ .trcont {
+    background-image: url('../img/aa.png');
+}
+#rr6:checked ~ .trcont {
+    background-image: url('../img/bb.png');
+}
+#rr7:checked ~ .trcont {
+    background-image: url('../img/cc.png');
+
+}
+#rr1, #rr2, #rr3, #rr4, #rr5, #rr6,#rr7 {
+    position: absolute;
+    left: -1000px;
+}
+.trcont  label  p{
+    position:relative;
+    top:0;
+    left:-120px;
+   
+}
+    /*---------------------------------3 block -----------4 block------------*/
